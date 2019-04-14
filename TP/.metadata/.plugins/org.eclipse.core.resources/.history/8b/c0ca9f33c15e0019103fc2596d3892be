@@ -1,0 +1,32 @@
+package ar.edu.unlam.tallerweb1.persistencia;
+
+import org.hibernate.Session;
+import org.junit.Test;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
+
+import ar.edu.unlam.tallerweb1.SpringTest;
+import ar.edu.unlam.tallerweb1.modelo.*;
+import static org.assertj.core.api.Assertions.*;
+
+
+public class EquipoTestDelete extends SpringTest{
+
+	@Test@Transactional@Rollback
+	public void borrarEquipo() {
+		
+		Equipo nuevo = new Equipo();
+		nuevo.setNombre("campeones");
+		nuevo.setCantJugadores(11);
+		Session session = getSession();
+		session.save(nuevo);
+		
+		Equipo buscado = session.get(Equipo.class, nuevo.getId());
+		assertThat(buscado).isNotNull();
+		
+		session.delete(nuevo);
+		Equipo buscado2 = session.get(Equipo.class, nuevo.getId());
+		assertThat(buscado2).isNull();
+
+	}
+}

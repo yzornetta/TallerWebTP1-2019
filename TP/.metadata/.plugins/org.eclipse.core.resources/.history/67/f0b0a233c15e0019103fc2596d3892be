@@ -1,0 +1,31 @@
+package ar.edu.unlam.tallerweb1.persistencia;
+
+import ar.edu.unlam.tallerweb1.SpringTest;
+import org.junit.Test;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
+
+import static org.assertj.core.api.Assertions.*;//importa todos los metodos estaticos de la clase assert
+import org.hibernate.Session;
+
+import ar.edu.unlam.tallerweb1.modelo.*;
+
+public class EquipoTest extends SpringTest {
+	//si tengo que hacer un test que persiste en la bd, le tengo que poner Transactional
+	//y tengo que heredar de SpringTest. Con Rollback todo lo que setiemos en la bd, al terminar lo elimina.
+	//el True en Rollback es opcional, funciona igual.
+	@Test@Transactional@Rollback(true)
+	public void guardarEquipo() {
+		Equipo campeon = new Equipo();
+		campeon.setNombre("miEquipo");
+		campeon.setCantJugadores(5); //No seteo el ID porque defini que se autogenere en la bd
+		Session session = getSession();
+		session.save(campeon);
+		//A partir de aca ya tiene id generado en la bd
+		Equipo buscado = session.get(Equipo.class,campeon.getId()); //Buscamos en la bd por su id para verificar que lo persistio
+		assertThat(buscado).isNotNull();//verifica que buscado no es Nulo
+		assertThat(buscado.getNombre()).isEqualTo("miEquipo");
+	}
+	
+	
+}
