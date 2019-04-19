@@ -16,7 +16,7 @@ public class Ciudad {
 	private Long id_ciudad;
 	private String nombre;
 	@OneToMany(mappedBy="ciudad")
-	private List<Ubicacion> ubicacionGeografica;
+	private List<Ubicacion> ubicacionGeografica;// devuelve una lista de ubicaciones
 	@ManyToOne
 	private Pais pais;
 	

@@ -1,3 +1,5 @@
 INDEX VERSION 1.131
 C:\Users\Yessy\Documents\Universidad\Java\Proyectos\TP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2021829584.index
 \proyecto-limpio-spring\src\main\java
+C:\Users\Yessy\Documents\GitHub\TallerWeb2019\TP\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2021829584.index
+\proyecto-limpio-spring\src\main\java

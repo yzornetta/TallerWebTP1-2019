@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="proyecto-limpio-spring" project="proyecto-limpio-spring" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" time="0.166">
-    <testcase name="pruebaConexion" classname="ar.edu.unlam.tallerweb1.persistencia.ConexionBaseDeDatosTest" time="0.166"/>
-  </testsuite>
-</testrun>

@@ -9,4 +9,5 @@
 <item elementID="=proyecto-limpio-spring/src\/test\/resources" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1555251837971_2" label="Window Working Set" name="Aggregate for window 1555251837971"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1555285280521_3" label="Window Working Set" name="Aggregate for window 1555285280521"/>
 </workingSetManager>
