@@ -12,6 +12,17 @@ public class Continente {
 	private Long id_continente;
 	private String nombre;
 	
+	
+	//Agregado
+	public Long getId_cont() {
+		return id_continente;
+	}
+	
+	public void setId_cont(Long id_continente) {
+		this.id_continente=id_continente;
+	}
+	
+	//Fin
 	public String getNombre() {
 		return nombre;
 	}

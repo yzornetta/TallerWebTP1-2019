@@ -15,7 +15,19 @@ public class Ubicacion {
 	private Float longitud;
 	@ManyToOne
 	private Ciudad ciudad;
-
+	
+	
+	//Agregado
+	public Long getId_ubic() {
+		return id_ubicacion;
+	}
+	
+	public void setId_ubic(Long id_ubicacion) {
+		this.id_ubicacion=id_ubicacion;
+	}
+	
+	
+	//Fin 
 	public Float getLatitud() {
 		return latitud;
 	}
