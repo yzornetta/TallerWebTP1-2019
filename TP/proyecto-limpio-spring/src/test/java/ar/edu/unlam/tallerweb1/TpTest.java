@@ -1,6 +1,9 @@
 package ar.edu.unlam.tallerweb1;
 
 import static org.assertj.core.api.Assertions.*;
+
+
+
 import ar.edu.unlam.tallerweb1.SpringTest;
 import org.hibernate.Session;
 import org.junit.Test;
@@ -49,21 +52,19 @@ public class TpTest extends SpringTest {
 		Session sessionPaisContinente = getSession();
 		sessionPaisContinente.save(paisContinente);
 		
-		assertThat(paisContinente.getContinente()).isEqualTo(continenteBuscado);
+		Pais paisContBuscado = sessionPaisContinente.get(Pais.class, paisContinente.getId());
+		assertThat(paisContBuscado.getContinente()).isEqualTo(continenteBuscado);
 		
 	}
 	
 	@Test @Transactional @Rollback
 	public void buscarPaisNorte() {
 		
-		Continente continente = new Continente();
+		
 		Pais pais = new Pais();
 		Ciudad ciudad = new Ciudad();
 		Ubicacion ubicacion = new Ubicacion();
-		
-		continente.setNombre("America");
-		Session sessionContinente = getSession();
-		sessionContinente.save(continente);
+	
 		
 		pais.setNombre("Canada");
 		Session sessionNombre = getSession();
@@ -77,14 +78,22 @@ public class TpTest extends SpringTest {
 		Session sessionCiudad = getSession();
 		sessionCiudad.save(ciudad);
 		
-		ubicacion.setLatitud(45.4208f);
+		ubicacion.setLatitud(45.4208f);  
 		Session sessionLatitud = getSession();
 		sessionLatitud.save(ubicacion);
 		
-		assertThat(ubicacion.getLatitud()).isGreaterThan(0);
+		ubicacion.setCiudad(ciudad);
+		Session sessionUbicCiudad = getSession();
+		sessionUbicCiudad.save(ubicacion);
+			
+		
+				
+		Ubicacion ubicacionBuscada = sessionLatitud.get(Ubicacion.class, ubicacion.getId_ubic());
+		
+		assertThat(ubicacionBuscada.getLatitud()).isGreaterThan(23.43722f); //23.43722 Tropico de Cancer
 		
 		
-		
+			
 		
 	}
 	
