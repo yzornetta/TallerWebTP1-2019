@@ -1,0 +1,71 @@
+package ar.edu.unlam.tallerweb1.persistencia;
+
+import ar.edu.unlam.tallerweb1.SpringTest;
+import ar.edu.unlam.tallerweb1.modelo.*;
+
+import org.hibernate.Session;
+import org.junit.Test;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
+
+public class PaisIdiomaTest extends SpringTest{
+
+@Test@Rollback@Transactional
+	public void pruebaIdiomaPais() {
+	
+	Continente continente = new Continente();
+	continente.setNombre("America");
+	
+	Pais pais = new Pais();
+	pais.setNombre("Argentina");
+	pais.setHabitantes(44000000);
+	pais.setIdioma("Espaniol");
+	pais.setCapital("La Plata");
+	pais.setContinente(continente);
+	
+	Session session = getSession();	
+	session.save(continente);
+	session.save(pais);
+	
+	Continente continente2 = new Continente();
+	continente2.setNombre("America");
+	
+	Pais pais2 = new Pais();
+	pais2.setNombre("Argentina");
+	pais2.setHabitantes(44000000);
+	pais2.setIdioma("Espaniol");
+	pais2.setCapital("La Plata");
+	pais2.setContinente(continente);
+		
+	session.save(continente2);
+	session.save(pais2);
+
+	Continente continente3 = new Continente();
+	continente3.setNombre("America");
+	
+	Pais pais3 = new Pais();
+	pais3.setNombre("Argentina");
+	pais3.setHabitantes(44000000);
+	pais3.setIdioma("Espaniol");
+	pais3.setCapital("La Plata");
+	pais3.setContinente(continente);
+		
+	session.save(continente3);
+	session.save(pais3);
+
+	Continente continente4 = new Continente();
+	continente4.setNombre("America");
+	
+	Pais pais4 = new Pais();
+	pais4.setNombre("Argentina");
+	pais4.setHabitantes(44000000);
+	pais4.setIdioma("Espaniol");
+	pais4.setCapital("La Plata");
+	pais4.setContinente(continente);
+		
+	session.save(continente4);
+	session.save(pais4);
+
+	
+	}
+}

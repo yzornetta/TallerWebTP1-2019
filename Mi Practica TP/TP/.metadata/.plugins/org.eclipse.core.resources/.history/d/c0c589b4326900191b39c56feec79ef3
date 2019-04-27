@@ -1,0 +1,53 @@
+package ar.edu.unlam.tallerweb1.persistencia;
+import ar.edu.unlam.tallerweb1.SpringTest;
+import ar.edu.unlam.tallerweb1.modelo.*;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+import org.junit.Test;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
+import static org.assertj.core.api.Assertions.*;
+
+import java.util.List;
+
+
+public class TropicoCancer extends SpringTest {
+	
+	@Test@Rollback@Transactional
+	public void PaisesTropCanTest() {
+		
+		Session session = getSession();
+		double latTCancer = 23.43722;		
+
+		Ubicacion ubicacion1 = new Ubicacion();
+		ubicacion1.setLatitud(-34.92068);
+		ubicacion1.setLongitud(-57.953764);
+		session.save(ubicacion1);
+		
+		Continente continente1 = new Continente();
+		continente1.setNombre("America");
+		session.save(continente1);
+		
+		Pais pais1 = new Pais();
+		pais1.setNombre("Argentina");
+		pais1.setHabitantes(44000000);
+		pais1.setIdioma("Espaniol");
+		pais1.setCapital("La Plata");
+		pais1.setContinente(continente1);
+		session.save(pais1);
+		
+		Ciudad ciudad1 = new Ciudad();
+		ciudad1.setNombre("La Plata");
+		ciudad1.setPais(pais1);
+		ciudad1.setUbicGeo(ubicacion1);
+		session.save(ciudad1);		
+		
+		List<Ciudad> lista = (List<Ciudad>) session.createCriteria(Ciudad.class)
+						   .createAlias("ubicacionGeografica", "ubi")
+						   .add(Restrictions.gt("ubi.latitud", latTCancer))
+						   .list();
+		
+		assertThat(lista.size()).isEqualTo(0);
+		
+	}
+}
