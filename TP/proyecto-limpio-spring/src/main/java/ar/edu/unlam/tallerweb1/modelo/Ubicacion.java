@@ -1,7 +1,7 @@
 package ar.edu.unlam.tallerweb1.modelo;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -11,24 +11,24 @@ public class Ubicacion {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id_ubicacion;
-	private Float latitud;
-	private Float longitud;
-	@ManyToOne
+	private double latitud;
+	private double longitud;
+	@OneToOne
 	private Ciudad ciudad;
 
-	public Float getLatitud() {
+	public double getLatitud() {
 		return latitud;
 	}
 	
-	public void setLatitud(Float latitud) {
+	public void setLatitud(double latitud) {
 		this.latitud = latitud;
 	}
 	
-	public Float getLongitud() {
+	public double getLongitud() {
 		return longitud;
 	}
 	
-	public void setLongitud(Float longitud) {
+	public void setLongitud(double longitud) {
 		this.longitud = longitud;
 	}
 	
