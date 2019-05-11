@@ -15,25 +15,8 @@ public class Ubicacion {
 	private double longitud;
 	@OneToOne
 	private Ciudad ciudad;
-<<<<<<< HEAD
-	
-	
-	//Agregado
-	public Long getId_ubic() {
-		return id_ubicacion;
-	}
-	
-	public void setId_ubic(Long id_ubicacion) {
-		this.id_ubicacion=id_ubicacion;
-	}
-	
-	
-	//Fin 
-	public Float getLatitud() {
-=======
 
 	public double getLatitud() {
->>>>>>> master
 		return latitud;
 	}
 	
