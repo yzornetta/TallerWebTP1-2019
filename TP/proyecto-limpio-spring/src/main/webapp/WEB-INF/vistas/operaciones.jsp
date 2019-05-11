@@ -10,29 +10,9 @@
 	</head>
 	<body>
 		<div class = "container">
-			<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-				<form:form action="validar-operacion" method="POST" modelAttribute="cadenaOperacion">
-			    	<h3 class="form-signin-heading">TP WEB III</h3>
-					<hr class="colorgraph"><br>
-					<%--Elementos de entrada de datos, el elemento path debe indicar en que atributo del objeto usuario se guardan los datos ingresados--%>
-					<h4 class="form-signin-heading">Ingresar cadena</h4>
-					<form:input path="cadena" id="cadena" class="form-control" />
-					<h4 class="form-signin-heading">Seleccionar operacion</h4>
-					<!--<form:select path="operacionElegida" multiple="false" class="form-control" required="true">
- 								<form:option id="pasarAMayuscula" value="pasarAMayuscula" />
- 								<form:option id="pasarAMiniscula" value="pasarAMiniscula" />
- 								<form:option id="invertirOrden" value="invertirOrden"  />
- 								<form:option id="cantidadDeCaracteres" value="cantidadDeCaracteres" />
- 						</form:select> 		  -->
-					
-					<button class="btn btn-lg btn-primary btn-block" Type="Submit">Ejecutar</button>
-				</form:form>
+			        <span>El resultado de ${operacion} sobre ${cadena} es: 
+			        <br>${resultadoCadena}</span>
 
-				<c:if test="${not empty error}">
-			        <h4><span>${error}</span></h4>
-			        <br>
-		        </c:if>	
-			</div>
 		</div>
 		
 		<!-- Placed at the end of the document so the pages load faster -->
