@@ -1,10 +1,9 @@
 package ar.edu.unlam.tallerweb1.modelo;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
@@ -15,8 +14,8 @@ public class Ciudad {
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id_ciudad;
 	private String nombre;
-	@OneToMany(mappedBy="ciudad")
-	private List<Ubicacion> ubicacionGeografica;// devuelve una lista de ubicaciones
+	@OneToOne
+	private Ubicacion ubicacionGeografica;
 	@ManyToOne
 	private Pais pais;
 	
@@ -47,11 +46,11 @@ public class Ciudad {
 		this.pais=pais;
 	}
 	
-	public List<Ubicacion> getUbicGeo(){
+	public Ubicacion getUbicGeo(){
 		return ubicacionGeografica;
 	}
 	
-	public void setUbicGeo(List<Ubicacion> ubicacionGeografica) {
+	public void setUbicGeo(Ubicacion ubicacionGeografica) {
 		this.ubicacionGeografica=ubicacionGeografica;
 	}
 
