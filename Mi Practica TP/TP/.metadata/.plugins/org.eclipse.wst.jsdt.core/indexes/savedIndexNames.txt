@@ -1,7 +1,0 @@
-INDEX VERSION 1.4+C:\Users\Yessy\Documents\Universidad\Java\Proyectos\Mi Practica TP\TP\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-316598123.index
-567521820.index
-3790435221.index
-1086309471.index
-2113608498.index
-1105624790.index

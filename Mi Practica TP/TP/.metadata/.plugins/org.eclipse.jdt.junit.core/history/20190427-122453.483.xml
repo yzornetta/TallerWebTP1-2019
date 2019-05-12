@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="PaisIdiomaTest" project="proyecto-limpio-spring" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="ar.edu.unlam.tallerweb1.persistencia.PaisIdiomaTest" time="0.276">
-    <testcase name="pruebaIdiomaPais" classname="ar.edu.unlam.tallerweb1.persistencia.PaisIdiomaTest" time="0.276"/>
-  </testsuite>
-</testrun>
