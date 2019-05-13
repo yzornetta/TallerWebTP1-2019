@@ -22,19 +22,19 @@ public class IdiomaPaisTest extends SpringTest {
 		Session session = getSession();
 		
 		Pais nuevosPaises = new Pais();
-		
-		nuevosPaises.setNombre("Inglaterra");
-		nuevosPaises.setIdioma("ingles");
-		session.save(nuevosPaises);
-		
+				
 		nuevosPaises.setNombre("Brazil");
 		nuevosPaises.setIdioma("Portugues");
 		session.save(nuevosPaises);
 		
+
+		nuevosPaises.setNombre("Inglaterra");
+		nuevosPaises.setIdioma("ingles");
+		session.save(nuevosPaises);
 		
 		@SuppressWarnings("unchecked")
 		List<Pais> listaPaises = (List<Pais>) session.createCriteria(Pais.class)
-			.add(Restrictions.eq("idioma","Portugues"))
+			.add(Restrictions.eq("idioma","ingles"))
 			.list();
 		
 		assertThat(listaPaises.size()).isEqualTo(1);
