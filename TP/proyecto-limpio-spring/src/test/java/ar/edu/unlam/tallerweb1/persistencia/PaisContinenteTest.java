@@ -20,16 +20,31 @@ public class PaisContinenteTest extends SpringTest{
 	public void buscarPaisDeUnContinenteTest() {
 		Session session = getSession();
 		
-		Continente continente = new Continente();
+		Continente continenteAmericano = new Continente();
+		Pais argentina = new Pais();
+		
+		continenteAmericano.setNombre("Argentina");
+		session.save(continenteAmericano);
+		
+		argentina.setNombre("Argentina");
+		argentina.setContinente(continenteAmericano);
+		session.save(argentina);
+		
+		
+		Continente continente= new Continente();
+		Pais pais = new Pais();
 		
 		continente.setNombre("Europa");
 		session.save(continente);
-		
-		Pais pais = new Pais();
-		
+				
 		pais.setNombre("Alemania");
 		pais.setContinente(continente);
 		session.save(pais);
+		
+		Pais inglaterra = new Pais();
+		inglaterra.setNombre("Inglaterra");
+		inglaterra.setContinente(continente);
+		session.save(inglaterra);
 		
 				
 		@SuppressWarnings("unchecked")
@@ -38,7 +53,7 @@ public class PaisContinenteTest extends SpringTest{
 				.add(Restrictions.eq("c.nombre","Europa"))
 				.list();
 		
-		assertThat(listaPaisesEuropa.size()).isEqualTo(1);
+		assertThat(listaPaisesEuropa.size()).isEqualTo(2);
 				
 				
 	}
