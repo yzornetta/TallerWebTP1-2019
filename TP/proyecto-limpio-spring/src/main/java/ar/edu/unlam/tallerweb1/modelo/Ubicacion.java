@@ -16,6 +16,14 @@ public class Ubicacion {
 	@OneToOne
 	private Ciudad ciudad;
 
+	public Long getIdUbicacion(){
+		return idUbicacion;
+	}
+	
+	public void setIdUbicacion(Long idUbicacion){
+		this.idUbicacion=idUbicacion;
+	}
+	
 	public double getLatitud() {
 		return latitud;
 	}

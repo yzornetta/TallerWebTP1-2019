@@ -19,7 +19,14 @@ public class Ciudad {
 	@ManyToOne
 	private Pais pais;
 	
-		
+	public Long getIdCiudad(){
+		return idCiudad;
+	}	
+	
+	public void setIdCiudad (Long idCiudad){
+		this.idCiudad=idCiudad;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
