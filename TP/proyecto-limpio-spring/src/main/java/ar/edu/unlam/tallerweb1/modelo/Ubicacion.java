@@ -10,7 +10,7 @@ public class Ubicacion {
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private Long id_ubicacion;
+	private Long idUbicacion;
 	private double latitud;
 	private double longitud;
 	@OneToOne

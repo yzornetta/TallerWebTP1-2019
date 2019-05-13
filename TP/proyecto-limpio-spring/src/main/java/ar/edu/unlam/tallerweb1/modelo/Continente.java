@@ -9,17 +9,17 @@ public class Continente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_continente;
+	private Long idContinente;
 	private String nombre;
 	
 	
 	//Agregado
 	public Long getId_cont() {
-		return id_continente;
+		return idContinente;
 	}
 	
-	public void setId_cont(Long id_continente) {
-		this.id_continente=id_continente;
+	public void setId_cont(Long idContinente) {
+		this.idContinente=idContinente;
 	}
 	
 	//Fin

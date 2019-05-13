@@ -12,7 +12,7 @@ public class Pais {
 
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private Long id_pais;
+	private Long idPais;
 	private String nombre;
 	private int habitantes;
 	private String idioma;
@@ -22,11 +22,11 @@ public class Pais {
 	private Continente continente;
 	
 	public Long getId() {
-		return id_pais;
+		return idPais;
 	}
 	
-	public void setId(Long id_pais) {
-		this.id_pais = id_pais;
+	public void setId(Long idPais) {
+		this.idPais = idPais;
 	}
 	
 	public String getNombre() {
