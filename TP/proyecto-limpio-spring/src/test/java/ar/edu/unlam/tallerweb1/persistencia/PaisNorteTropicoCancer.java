@@ -22,7 +22,23 @@ public class PaisNorteTropicoCancer extends SpringTest{
 		Session session = getSession();
 		double latCancer= 23.43722;
 		double latCiudad = 45.5208;
+		double latBsAs = -34.9314;
+		double latLima =  -34.05;
 		
+		Ubicacion ubicacionBsAs = new Ubicacion();
+		Ciudad ciudadBsAs = new Ciudad();
+		Pais paisBsAs = new Pais();
+		
+		ubicacionBsAs.setLatitud(latBsAs);
+		session.save(ubicacionBsAs);
+		
+		ciudadBsAs.setNombre("Buenos Aires");
+		ciudadBsAs.setUbicGeo(ubicacionBsAs);
+		session.save(ciudadBsAs);
+		
+		paisBsAs.setNombre("Argentina");
+		paisBsAs.setCapital(ciudadBsAs);
+		session.save(paisBsAs);
 		
 		Ubicacion ubicacion = new Ubicacion();
 		Ciudad ciudad = new Ciudad();
@@ -42,6 +58,20 @@ public class PaisNorteTropicoCancer extends SpringTest{
 		pais.setCapital(ciudad);
 		session.save(pais);
 	
+		Ubicacion ubicacionLima = new Ubicacion();
+		Ciudad ciudadLima = new Ciudad();
+		Pais paisLima = new Pais();
+		
+		ubicacionLima.setLatitud(latLima);
+		session.save(ubicacionLima);
+		
+		ciudadLima.setNombre("Lima");
+		ciudadLima.setUbicGeo(ubicacionLima);
+		session.save(ciudadLima);
+		
+		paisLima.setNombre("Peru");
+		paisLima.setCapital(ciudadLima);
+		session.save(paisLima);
 		
 		@SuppressWarnings("unchecked")
 		List<Pais> paisAlNorte= (List<Pais>) session.createCriteria(Pais.class)
